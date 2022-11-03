@@ -72,6 +72,7 @@ function populateGame() {
 }
 function getNumberPos(boxContentArr, bombPosIndex) {
   console.log("hej: ", boxContentArr, bombPosIndex);
+  let newArr = boxContentArr
   const topLine = [0,1,2,3,4,5,6,7]
   const rightLine = [7,15,23,31,39,47,55,63]
   const leftLine = [0,8,16,24,32,40,48,56]
@@ -79,29 +80,31 @@ function getNumberPos(boxContentArr, bombPosIndex) {
   for (let index = 0; index < bombPosIndex.length; index++) {
     const indexOfBomb = bombPosIndex[index];
     if(rightLine.includes(index) === false) {
-      boxContentArr[indexOfBomb + 1] = boxContentArr[indexOfBomb + 1] + 1;
+      newArr[indexOfBomb + 1] = newArr[indexOfBomb + 1] + 1;
     }
     if(topLine.includes(index) === false) {
-      boxContentArr[indexOfBomb + 8] = boxContentArr[indexOfBomb + 8] + 1;
-      boxContentArr[indexOfBomb + 9] = boxContentArr[indexOfBomb + 9] + 1;
-      boxContentArr[indexOfBomb + 7] = boxContentArr[indexOfBomb + 7] + 1;
+      newArr[indexOfBomb + 8] = newArr[indexOfBomb + 8] + 1;
     }
     if(leftLine.includes(index) === false) {
-      boxContentArr[indexOfBomb - 1] = boxContentArr[indexOfBomb - 1] + 1;
+      newArr[indexOfBomb - 1] = newArr[indexOfBomb - 1] + 1;
     }
     if(bottomLine.includes(index) === false) {
-      boxContentArr[indexOfBomb - 8] = boxContentArr[indexOfBomb - 8] + 1;
-      boxContentArr[indexOfBomb - 9] = boxContentArr[indexOfBomb - 9] + 1;
-      boxContentArr[indexOfBomb - 7] = boxContentArr[indexOfBomb - 7] + 1;
+      newArr[indexOfBomb - 8] = newArr[indexOfBomb - 8] + 1;
     }
     if(rightLine.includes(index) === false && bottomLine.includes(index) === false) {
-      
+      newArr[indexOfBomb + 9] = newArr[indexOfBomb + 9] + 1;
     }
     if(rightLine.includes(index) === false && bottomLine.includes(index) === false) {
-
+      newArr[indexOfBomb - 9] = newArr[indexOfBomb - 9] + 1;
+    }
+    if(leftLine.includes(index) === false && topLine.includes(index) === false) {
+      newArr[indexOfBomb - 7] = newArr[indexOfBomb - 7] + 1;
+    }
+    if(leftLine.includes(index) === false && bottomLine.includes(index) === false) {
+      newArr[indexOfBomb + 7] = newArr[indexOfBomb + 7] + 1;
     }
   }
-  return boxContentArr
+  return newArr
 }
 function getOnlyNewNomber(arr) {
   let val = getRandomNumber(1, 65);
