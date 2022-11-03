@@ -1,3 +1,11 @@
+# regler 
+
+första gissningen är fri
+
+My level (4x4 with 5 mines)
+Beginner level (8x8 with 10 mines)
+
+
 # JavaScript - MS RÖJ
 
 Du använder dig av DOM:en för att interagera med HTML/CSS. Du använder enbart Vanilla JavaScript (inget ramverk/bibliotek). Din styling andas 90-tal eller så omvandlar du det klassiska spelet till en modern version  :floppy_disk: => :computer:
