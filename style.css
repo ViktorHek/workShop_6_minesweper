@@ -16,7 +16,7 @@ body {
 .result-container {
     display: flex;
     justify-content: space-around;
-    width: 130px;
+    width: 220px;
 }
 .box-0,
 .box-1,
@@ -89,5 +89,5 @@ body {
     border: 1px solid black;
     display: grid;
     place-items: center;
-    font-size: 1px;
+    font-size: 0px;
 }
